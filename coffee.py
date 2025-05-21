@@ -26,3 +26,4 @@ class Coffee:
             return sum(prices) / len(prices)
         else:
             return 0
+

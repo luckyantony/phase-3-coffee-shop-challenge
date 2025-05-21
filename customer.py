@@ -27,12 +27,17 @@ class Customer:
 
     @classmethod
     def most_aficionado(cls, coffee):
-        highest = 0
-        top_customer = None
+        from order import Order
+        customers = {}
         for order in Order.all_orders:
             if order.coffee == coffee:
-                total = sum([o.price for o in Order.all_orders if o.customer == order.customer and o.coffee == coffee])
-                if total > highest:
-                    highest = total
-                    top_customer = order.customer
-        return top_customer
+                if order.customer in customers:
+                    customers[order.customer] += order.price
+                else:
+                    customers[order.customer] = order.price
+        if customers:
+            return max(customers, key=customers.get)
+        else:
+            return None
+
+

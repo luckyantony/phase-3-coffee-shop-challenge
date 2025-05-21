@@ -80,4 +80,4 @@ python -m pytest tests/ -v
 ```bash
 python debug.py
 
-Built with 💻 and ☕ by Luckyantony Leshan
+Built with 💻 and  ☕ by Luckyantony Leshan

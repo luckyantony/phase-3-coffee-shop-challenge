@@ -1,1 +1,4 @@
 
+def debug:
+    pass
+
